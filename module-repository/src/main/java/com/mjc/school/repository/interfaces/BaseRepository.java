@@ -1,6 +1,4 @@
-package com.mjc.school.repository;
-
-import com.mjc.school.repository.model.BaseEntity;
+package com.mjc.school.repository.interfaces;
 
 import java.util.List;
 import java.util.Optional;
