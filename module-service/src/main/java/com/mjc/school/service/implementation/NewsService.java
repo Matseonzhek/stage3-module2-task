@@ -36,7 +36,7 @@ NewsService implements BaseService<NewsDtoRequest, NewsDtoResponse, Long> {
         return NewsMapper.INSTANCE.listNewsToNewsDtoResponse(newsRepository.readAll());
     }
 
-    @Validate
+    @Validate(value = "checkNewsId")
     @Override
     public NewsDtoResponse readById(Long id) {
         if (newsRepository.existById(id)) {
@@ -47,9 +47,8 @@ NewsService implements BaseService<NewsDtoRequest, NewsDtoResponse, Long> {
         }
     }
 
-
     @Override
-    @Validate
+    @Validate(value = "checkNews")
     public NewsDtoResponse create(NewsDtoRequest createRequest) {
         NewsModel newsModel = NewsMapper.INSTANCE.newsDtoRequestToNews(createRequest);
         LocalDateTime localDateTime = LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS);
@@ -59,7 +58,7 @@ NewsService implements BaseService<NewsDtoRequest, NewsDtoResponse, Long> {
         return NewsMapper.INSTANCE.newsToNewsDtoResponse(createdNewsModel);
     }
 
-    @Validate
+    @Validate(value = "checkNews")
     @Override
     public NewsDtoResponse update(NewsDtoRequest updateRequest) {
         if (newsRepository.existById(updateRequest.getId())) {
@@ -73,7 +72,7 @@ NewsService implements BaseService<NewsDtoRequest, NewsDtoResponse, Long> {
         }
     }
 
-    @Validate
+    @Validate(value = "checkNewsId")
     @Override
     public boolean deleteById(Long id) {
         if (newsRepository.existById(id)) {

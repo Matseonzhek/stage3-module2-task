@@ -1,4 +1,4 @@
-package com.mjc.school.implementation.commands;
+package com.mjc.school.controller.implementation.commands;
 
 import com.mjc.school.controller.interfaces.BaseController;
 import com.mjc.school.service.dto.AuthorDtoRequest;

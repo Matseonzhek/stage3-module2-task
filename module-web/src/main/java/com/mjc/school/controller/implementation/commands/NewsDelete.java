@@ -1,13 +1,13 @@
-package com.mjc.school.implementation.commands;
+package com.mjc.school.controller.implementation.commands;
 
+import com.mjc.school.controller.constants.Constants;
 import com.mjc.school.controller.interfaces.BaseController;
-import com.mjc.school.interfaces.Command;
+import com.mjc.school.controller.interfaces.Command;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 
 import java.util.Scanner;
 
-import static com.mjc.school.Constants.Constants.NEWS_ID;
 
 public class NewsDelete extends NewsBaseCommand implements Command {
     private final Scanner scanner;
@@ -19,7 +19,7 @@ public class NewsDelete extends NewsBaseCommand implements Command {
 
     @Override
     public boolean execute() {
-        System.out.println(NEWS_ID);
+        System.out.println(Constants.NEWS_ID);
         long id = Long.parseLong(scanner.nextLine());
         newsController.deleteById(id);
         return true;

@@ -1,8 +1,8 @@
-package com.mjc.school.implementation.commands;
+package com.mjc.school.controller.implementation.commands;
 
-import com.mjc.school.Constants.Constants;
+import com.mjc.school.controller.constants.Constants;
 import com.mjc.school.controller.interfaces.BaseController;
-import com.mjc.school.interfaces.Command;
+import com.mjc.school.controller.interfaces.Command;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 

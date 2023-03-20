@@ -1,13 +1,13 @@
-package com.mjc.school.implementation.commands;
+package com.mjc.school.controller.implementation.commands;
 
+import com.mjc.school.controller.constants.Constants;
 import com.mjc.school.controller.interfaces.BaseController;
-import com.mjc.school.interfaces.Command;
+import com.mjc.school.controller.interfaces.Command;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 
 import java.util.Scanner;
 
-import static com.mjc.school.Constants.Constants.*;
 
 public class NewsCreate extends NewsBaseCommand implements Command {
 
@@ -20,11 +20,11 @@ public class NewsCreate extends NewsBaseCommand implements Command {
 
     @Override
     public boolean execute() {
-        System.out.println(NEWS_TITLE);
+        System.out.println(Constants.NEWS_TITLE);
         String title = scanner.nextLine();
-        System.out.println(NEWS_CONTENT);
+        System.out.println(Constants.NEWS_CONTENT);
         String content = scanner.nextLine();
-        System.out.println(NEWS_AUTHOR_ID);
+        System.out.println(Constants.NEWS_AUTHOR_ID);
         long author_id = Long.parseLong(scanner.nextLine());
         NewsDtoRequest newsDtoRequest = new NewsDtoRequest(null, title, content, author_id);
         System.out.println(newsController.create(newsDtoRequest));

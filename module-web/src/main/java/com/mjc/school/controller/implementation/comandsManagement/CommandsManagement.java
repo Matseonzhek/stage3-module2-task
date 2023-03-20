@@ -1,15 +1,11 @@
-package com.mjc.school.implementation.comandsManagement;
+package com.mjc.school.controller.implementation.comandsManagement;
 
+import com.mjc.school.controller.constants.Constants;
 import com.mjc.school.controller.implementation.AuthorController;
 import com.mjc.school.controller.implementation.NewsController;
-import com.mjc.school.controller.interfaces.BaseController;
-import com.mjc.school.implementation.commands.ExitCommand;
-import com.mjc.school.interfaces.Command;
-import com.mjc.school.operations.Operations;
-import com.mjc.school.service.dto.AuthorDtoRequest;
-import com.mjc.school.service.dto.AuthorDtoResponse;
-import com.mjc.school.service.dto.NewsDtoRequest;
-import com.mjc.school.service.dto.NewsDtoResponse;
+import com.mjc.school.controller.implementation.commands.ExitCommand;
+import com.mjc.school.controller.interfaces.Command;
+import com.mjc.school.controller.operations.Operations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +13,6 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
-import static com.mjc.school.Constants.Constants.*;
 
 @Component
 public class CommandsManagement {
@@ -39,10 +34,10 @@ public class CommandsManagement {
                 .filter(operation -> Objects.equals(operation.getOperationNumber(), operationNumber)).
                 findFirst().get();
 
-        if (operationNumber >= NEWS_FIRST_OPERATION && operationNumber <= NEWS_LAST_OPERATION) {
+        if (operationNumber >= Constants.NEWS_FIRST_OPERATION && operationNumber <= Constants.NEWS_LAST_OPERATION) {
             return operations.getOperation(scanner, newsController);
         }
-        if (operationNumber >= AUTHOR_FIRST_OPERATION && operationNumber <= AUTHOR_LAST_OPERATION) {
+        if (operationNumber >= Constants.AUTHOR_FIRST_OPERATION && operationNumber <= Constants.AUTHOR_LAST_OPERATION) {
             return operations.getOperation(scanner, authorController);
         }
         return new ExitCommand();

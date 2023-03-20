@@ -1,4 +1,4 @@
-package com.mjc.school.Constants;
+package com.mjc.school.controller.constants;
 
 public class Constants {
 

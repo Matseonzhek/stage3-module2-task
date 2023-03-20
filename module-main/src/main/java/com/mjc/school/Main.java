@@ -3,7 +3,6 @@ package com.mjc.school;
 import com.mjc.school.menu.Menu;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
 
 public class Main {
     public static void main(String[] args) {

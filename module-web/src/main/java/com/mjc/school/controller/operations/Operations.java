@@ -1,8 +1,8 @@
-package com.mjc.school.operations;
+package com.mjc.school.controller.operations;
 
+import com.mjc.school.controller.implementation.commands.*;
 import com.mjc.school.controller.interfaces.BaseController;
-import com.mjc.school.implementation.commands.*;
-import com.mjc.school.interfaces.Command;
+import com.mjc.school.controller.interfaces.Command;
 import com.mjc.school.service.dto.AuthorDtoRequest;
 import com.mjc.school.service.dto.AuthorDtoResponse;
 import com.mjc.school.service.dto.NewsDtoRequest;

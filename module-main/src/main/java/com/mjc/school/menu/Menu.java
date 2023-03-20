@@ -1,14 +1,15 @@
 package com.mjc.school.menu;
 
-import com.mjc.school.implementation.comandsManagement.CommandsManagement;
-import com.mjc.school.interfaces.Command;
-import com.mjc.school.operations.Operations;
+import com.mjc.school.controller.implementation.comandsManagement.CommandsManagement;
+import com.mjc.school.controller.interfaces.Command;
+import com.mjc.school.controller.operations.Operations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
-import static com.mjc.school.Constants.Constants.*;
+import static com.mjc.school.controller.constants.Constants.*;
+
 
 @Component
 public class Menu {

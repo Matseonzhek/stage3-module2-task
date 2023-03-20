@@ -1,13 +1,13 @@
-package com.mjc.school.implementation.commands;
+package com.mjc.school.controller.implementation.commands;
 
+import com.mjc.school.controller.constants.Constants;
 import com.mjc.school.controller.interfaces.BaseController;
-import com.mjc.school.interfaces.Command;
+import com.mjc.school.controller.interfaces.Command;
 import com.mjc.school.service.dto.AuthorDtoRequest;
 import com.mjc.school.service.dto.AuthorDtoResponse;
 
 import java.util.Scanner;
 
-import static com.mjc.school.Constants.Constants.AUTHOR_NAME;
 
 public class AuthorCreate extends AuthorBaseCommand implements Command {
 
@@ -20,7 +20,7 @@ public class AuthorCreate extends AuthorBaseCommand implements Command {
 
     @Override
     public boolean execute() {
-        System.out.println(AUTHOR_NAME);
+        System.out.println(Constants.AUTHOR_NAME);
         String name = scanner.nextLine();
         AuthorDtoRequest authorDtoRequest = new AuthorDtoRequest(null, name);
         System.out.println(authorController.create(authorDtoRequest));
