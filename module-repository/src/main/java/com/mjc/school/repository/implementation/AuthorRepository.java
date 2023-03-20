@@ -13,10 +13,10 @@ import java.util.Optional;
 @Repository
 public class AuthorRepository implements BaseRepository<AuthorModel, Long> {
 
-    @Autowired
+
     private final DataSource dataSource;
 
-
+    @Autowired
     public AuthorRepository(DataSource dataSource) {
         this.dataSource = DataSource.getDataSource();
     }
