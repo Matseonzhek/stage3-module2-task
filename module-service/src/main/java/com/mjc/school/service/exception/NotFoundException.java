@@ -6,6 +6,6 @@ public class NotFoundException extends RuntimeException{
      * detail message.  The cause is not initialized, and may subsequently be
      * initialized by a call to {@link #initCause}.
      */
-    public NotFoundException(String message) {
+    public NotFoundException(String message) { super(message);
     }
 }

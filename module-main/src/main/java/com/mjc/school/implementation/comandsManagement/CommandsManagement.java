@@ -1,5 +1,7 @@
 package com.mjc.school.implementation.comandsManagement;
 
+import com.mjc.school.controller.implementation.AuthorController;
+import com.mjc.school.controller.implementation.NewsController;
 import com.mjc.school.controller.interfaces.BaseController;
 import com.mjc.school.implementation.commands.ExitCommand;
 import com.mjc.school.interfaces.Command;
@@ -20,12 +22,12 @@ import static com.mjc.school.Constants.Constants.*;
 @Component
 public class CommandsManagement {
 
-    private final BaseController<NewsDtoRequest, NewsDtoResponse, Long> newsController;
-    private final BaseController<AuthorDtoRequest, AuthorDtoResponse, Long> authorController;
+    private final NewsController newsController;
+    private final AuthorController authorController;
     private Command command;
 
     @Autowired
-    public CommandsManagement(BaseController<NewsDtoRequest, NewsDtoResponse, Long> newsController, BaseController<AuthorDtoRequest, AuthorDtoResponse, Long> authorController) {
+    public CommandsManagement(NewsController newsController, AuthorController authorController) {
         this.newsController = newsController;
         this.authorController = authorController;
     }

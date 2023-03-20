@@ -17,7 +17,7 @@ import java.util.List;
 
 import static com.mjc.school.service.constants.Constants.AUTHOR_NOT_EXIST;
 
-@Service
+@Service(value = "authorService")
 public class AuthorService implements BaseService<AuthorDtoRequest, AuthorDtoResponse, Long> {
 
     private final AuthorRepository authorRepository;

@@ -9,6 +9,7 @@ import com.mjc.school.service.exception.NotFoundException;
 import com.mjc.school.service.interfaces.BaseService;
 import com.mjc.school.service.interfaces.NewsMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -18,7 +19,7 @@ import java.util.Optional;
 
 import static com.mjc.school.service.constants.Constants.NEWS_NOT_EXIST;
 
-@Service
+@Component
 public class
 NewsService implements BaseService<NewsDtoRequest, NewsDtoResponse, Long> {
 

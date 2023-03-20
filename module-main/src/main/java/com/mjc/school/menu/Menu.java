@@ -1,4 +1,4 @@
-package com.mjc.school;
+package com.mjc.school.menu;
 
 import com.mjc.school.implementation.comandsManagement.CommandsManagement;
 import com.mjc.school.interfaces.Command;
@@ -28,12 +28,13 @@ public class Menu {
             try {
                 printMenu();
                 int operationNumber = getOperationNumber(scanner);
-                if (operationNumber >= FIRST_OPERATION && operationNumber <=LAST_OPERATION) {
-                    Command command = commandsManagement.getCommand(scanner,operationNumber);
+                if (operationNumber >= FIRST_OPERATION && operationNumber <= LAST_OPERATION) {
+                    Command command = commandsManagement.getCommand(scanner, operationNumber);
                     isRunning = command.execute();
                 } else System.out.println(WRONG_NUMBER_OF_OPERATION);
             } catch (RuntimeException e) {
-                e.getCause().getMessage();
+                System.out.println(e.getMessage());
+                ;
             }
         }
     }
