@@ -2,8 +2,8 @@ package com.mjc.school.repository.source;
 
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.model.NewsModel;
-import com.mjc.school.repository.source.data.AuthorData;
-import com.mjc.school.repository.source.data.NewsData;
+import com.mjc.school.repository.source.data.AuthorSource;
+import com.mjc.school.repository.source.data.NewsSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -17,8 +17,8 @@ public class DataSource {
 
     @Autowired
     public DataSource() {
-        newsModelList = NewsData.getInstance().getNewsModelList();
-        authorModelList = AuthorData.getInstance().getAuthorModelList();
+        newsModelList = NewsSource.getInstance().getNewsModelList();
+        authorModelList = AuthorSource.getInstance().getAuthorModelList();
     }
 
     public static DataSource getDataSource() {

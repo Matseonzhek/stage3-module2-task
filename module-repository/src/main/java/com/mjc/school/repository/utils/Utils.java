@@ -1,5 +1,8 @@
 package com.mjc.school.repository.utils;
 
+import com.mjc.school.repository.interfaces.BaseEntity;
+import com.mjc.school.repository.interfaces.BaseRepository;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,10 +10,7 @@ import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 public class Utils {
 
@@ -50,5 +50,6 @@ public class Utils {
         Random random = new Random();
         return random.nextLong(range);
     }
+
 
 }

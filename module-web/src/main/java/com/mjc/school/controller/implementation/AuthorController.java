@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import java.util.List;
 
 @Controller
-public class AuthorController implements BaseController<AuthorDtoRequest,AuthorDtoResponse, Long> {
+public class AuthorController implements BaseController<AuthorDtoRequest, AuthorDtoResponse, Long> {
 
     private final AuthorService authorService;
 
@@ -21,26 +21,26 @@ public class AuthorController implements BaseController<AuthorDtoRequest,AuthorD
 
     @Override
     public List<AuthorDtoResponse> readAll() {
-        return null;
+        return authorService.readAll();
     }
 
     @Override
     public AuthorDtoResponse readById(Long id) {
-        return null;
+        return authorService.readById(id);
     }
 
     @Override
     public AuthorDtoResponse create(AuthorDtoRequest createRequest) {
-        return null;
+        return authorService.create(createRequest);
     }
 
     @Override
     public AuthorDtoResponse update(AuthorDtoRequest updateRequest) {
-        return null;
+        return authorService.update(updateRequest);
     }
 
     @Override
     public boolean deleteById(Long id) {
-        return false;
+        return authorService.deleteById(id);
     }
 }

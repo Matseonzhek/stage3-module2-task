@@ -9,21 +9,21 @@ import java.util.List;
 
 import static com.mjc.school.repository.constants.Constants.*;
 
-public class NewsData {
+public class NewsSource {
 
     private static final List<NewsModel> newsModelList = new ArrayList<>();
-    private static NewsData instance;
+    private static NewsSource instance;
     private final List<String> newsTitle = Utils.readFromFile(NEWS_NAME_FILE);
     private final List<String> newsContent = Utils.readFromFile(CONTENT_NAME_FILE);
     private final List<String> authors = Utils.readFromFile(AUTHOR_NAME_FILE);
 
-    private NewsData() {
+    private NewsSource() {
         init();
     }
 
-    public static NewsData getInstance() {
+    public static NewsSource getInstance() {
         if (instance == null) {
-            instance = new NewsData();
+            instance = new NewsSource();
         }
         return instance;
     }

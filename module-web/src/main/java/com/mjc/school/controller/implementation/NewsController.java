@@ -4,7 +4,6 @@ import com.mjc.school.controller.interfaces.BaseController;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 import com.mjc.school.service.implementation.NewsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
@@ -14,7 +13,6 @@ public class NewsController implements BaseController<NewsDtoRequest, NewsDtoRes
 
     private final NewsService newsService;
 
-    @Autowired
     public NewsController(NewsService newsService) {
         this.newsService = newsService;
     }
@@ -26,21 +24,21 @@ public class NewsController implements BaseController<NewsDtoRequest, NewsDtoRes
 
     @Override
     public NewsDtoResponse readById(Long id) {
-        return null;
+        return newsService.readById(id);
     }
 
     @Override
     public NewsDtoResponse create(NewsDtoRequest createRequest) {
-        return null;
+        return newsService.create(createRequest);
     }
 
     @Override
     public NewsDtoResponse update(NewsDtoRequest updateRequest) {
-        return null;
+        return newsService.update(updateRequest);
     }
 
     @Override
     public boolean deleteById(Long id) {
-        return false;
+        return newsService.deleteById(id);
     }
 }

@@ -4,17 +4,16 @@ import com.mjc.school.repository.interfaces.BaseRepository;
 import com.mjc.school.repository.model.AuthorModel;
 import com.mjc.school.repository.source.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 public class AuthorRepository implements BaseRepository<AuthorModel, Long> {
 
-//    @Autowired
-    @Qualifier("datasource")
+    @Autowired
     private final DataSource dataSource;
 
 
@@ -24,31 +23,53 @@ public class AuthorRepository implements BaseRepository<AuthorModel, Long> {
 
     @Override
     public List<AuthorModel> readAll() {
-        return null;
+        return dataSource.getAuthorModelList();
     }
 
     @Override
     public Optional<AuthorModel> readById(Long id) {
-        return Optional.empty();
+        return Optional.of(dataSource.getAuthorModelList()
+                .stream()
+                .filter(authorModel -> authorModel.getId().equals(id))
+                .findFirst()
+                .get());
     }
 
     @Override
     public AuthorModel create(AuthorModel entity) {
-        return null;
+        List<AuthorModel> authorModelList = dataSource.getAuthorModelList();
+        authorModelList.sort(Comparator.comparing(AuthorModel::getId));
+        if (!authorModelList.isEmpty()) {
+            entity.setId(authorModelList.get(authorModelList.size() - 1).getId() + 1);
+        } else {
+            entity.setId(1L);
+        }
+        authorModelList.add(entity);
+        return entity;
     }
 
     @Override
     public AuthorModel update(AuthorModel entity) {
+        long id = entity.getId();
+        Optional<AuthorModel> updatedAuthorModel = readById(id);
+        if (updatedAuthorModel.isPresent()) {
+            updatedAuthorModel.get().setName(entity.getName());
+            updatedAuthorModel.get().setUpdatedDate(entity.getUpdatedDate());
+            return updatedAuthorModel.get();
+        }
         return null;
     }
 
     @Override
     public boolean deleteById(Long id) {
-        return false;
+        return dataSource.getAuthorModelList().remove(readById(id).get());
     }
 
     @Override
     public boolean existById(Long id) {
-        return false;
+        return dataSource
+                .getAuthorModelList()
+                .stream()
+                .anyMatch(authorModel -> authorModel.getId().equals(id));
     }
 }

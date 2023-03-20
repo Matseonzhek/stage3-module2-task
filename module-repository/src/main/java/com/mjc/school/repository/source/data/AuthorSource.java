@@ -9,18 +9,18 @@ import java.util.List;
 
 import static com.mjc.school.repository.constants.Constants.AUTHOR_NAME_FILE;
 
-public class AuthorData {
-    private static AuthorData instance;
+public class AuthorSource {
+    private static AuthorSource instance;
     private static final List<AuthorModel> authorModelList = new ArrayList<>();
     private final List<String> authors = Utils.readFromFile(AUTHOR_NAME_FILE);
 
-    private AuthorData() {
+    private AuthorSource() {
         init();
     }
 
-    public static AuthorData getInstance() {
+    public static AuthorSource getInstance() {
         if (instance == null) {
-            instance = new AuthorData();
+            instance = new AuthorSource();
         }
         return instance;
     }
