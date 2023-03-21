@@ -1,8 +1,5 @@
 package com.mjc.school.repository.utils;
 
-import com.mjc.school.repository.interfaces.BaseEntity;
-import com.mjc.school.repository.interfaces.BaseRepository;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

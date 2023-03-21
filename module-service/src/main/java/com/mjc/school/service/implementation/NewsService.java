@@ -6,11 +6,10 @@ import com.mjc.school.service.annotation.Validate;
 import com.mjc.school.service.dto.NewsDtoRequest;
 import com.mjc.school.service.dto.NewsDtoResponse;
 import com.mjc.school.service.exception.NotFoundException;
-import com.mjc.school.service.interfaces.BaseService;
+import com.mjc.school.service.BaseService;
 import com.mjc.school.service.interfaces.NewsMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;

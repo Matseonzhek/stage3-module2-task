@@ -1,7 +1,6 @@
 package com.mjc.school.repository.model;
 
-import com.mjc.school.repository.interfaces.BaseEntity;
-import org.springframework.stereotype.Component;
+import com.mjc.school.repository.BaseEntity;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

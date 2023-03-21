@@ -7,7 +7,7 @@ import com.mjc.school.service.dto.AuthorDtoRequest;
 import com.mjc.school.service.dto.AuthorDtoResponse;
 import com.mjc.school.service.exception.NotFoundException;
 import com.mjc.school.service.interfaces.AuthorMapper;
-import com.mjc.school.service.interfaces.BaseService;
+import com.mjc.school.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
