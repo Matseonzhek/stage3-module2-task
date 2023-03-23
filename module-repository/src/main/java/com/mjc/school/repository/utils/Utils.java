@@ -7,9 +7,16 @@ import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
 
 public class Utils {
+    static Random random = new Random();
+
+    private Utils() {
+    }
 
     public static List<String> readFromFile(String fileName) {
         List<String> data = new ArrayList<>();
@@ -34,7 +41,6 @@ public class Utils {
     }
 
     public static LocalDateTime createdRandomDate() {
-        Random random = new Random();
         LocalDate day = LocalDate.now().plusDays(random.nextInt(30));
         int hour = random.nextInt(24);
         int minutes = random.nextInt(60);
@@ -44,7 +50,6 @@ public class Utils {
     }
 
     public static Long createRandomNumber(Long range) {
-        Random random = new Random();
         return random.nextLong(range);
     }
 

@@ -8,7 +8,7 @@ public abstract class AuthorBaseCommand {
 
     protected final BaseController<AuthorDtoRequest, AuthorDtoResponse, Long> authorController;
 
-    public AuthorBaseCommand(BaseController<AuthorDtoRequest, AuthorDtoResponse, Long> authorController) {
+    protected AuthorBaseCommand(BaseController<AuthorDtoRequest, AuthorDtoResponse, Long> authorController) {
         this.authorController = authorController;
     }
 }

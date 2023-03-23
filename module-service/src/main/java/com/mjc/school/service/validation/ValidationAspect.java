@@ -17,15 +17,6 @@ import static com.mjc.school.service.constants.Constants.*;
 @Component
 public class ValidationAspect {
 
-
-    @Before(value = "@annotation(com.mjc.school.service.annotation.Validate)&&args(id)")
-    private void checkAuthorId(Long id) {
-        validateNumber(id, AUTHOR_ID);
-        if (id > MAX_AUTHOR_ID) {
-            throw new ValidationException(ERROR_VALUE_NUMBER + " " + id);
-        }
-    }
-
     @Before(value = "@annotation(com.mjc.school.service.annotation.Validate)&&args(id)")
     public void checkNewsId(JoinPoint joinPoint, Long id) {
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
@@ -46,7 +37,8 @@ public class ValidationAspect {
         if (value.equals("checkNews")) {
             validateString(newsDtoRequest.getTitle(), NEWS_ID, NEWS_TITLE_MIN, NEWS_TITLE_MAX);
             validateString(newsDtoRequest.getContent(), NEWS_ID, NEWS_CONTENT_MIN, NEWS_CONTENT_MAX);
-            checkAuthorId(newsDtoRequest.getAuthorId());
+            checkNewsId(joinPoint,newsDtoRequest.getId());
+            checkNewsId(joinPoint,newsDtoRequest.getAuthorId());
         }
     }
 

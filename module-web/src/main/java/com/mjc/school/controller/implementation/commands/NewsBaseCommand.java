@@ -8,7 +8,7 @@ public abstract class NewsBaseCommand {
 
     protected final BaseController<NewsDtoRequest, NewsDtoResponse, Long> newsController;
 
-    public NewsBaseCommand(BaseController<NewsDtoRequest, NewsDtoResponse, Long> newsController) {
+    protected NewsBaseCommand(BaseController<NewsDtoRequest, NewsDtoResponse, Long> newsController) {
         this.newsController = newsController;
     }
 }

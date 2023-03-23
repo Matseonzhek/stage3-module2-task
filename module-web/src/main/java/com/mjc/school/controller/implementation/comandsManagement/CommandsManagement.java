@@ -19,7 +19,6 @@ public class CommandsManagement {
 
     private final NewsController newsController;
     private final AuthorController authorController;
-    private Command command;
 
     @Autowired
     public CommandsManagement(NewsController newsController, AuthorController authorController) {

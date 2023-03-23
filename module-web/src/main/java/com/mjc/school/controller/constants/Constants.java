@@ -21,4 +21,6 @@ public class Constants {
     public static Integer NEWS_FIRST_OPERATION = 0;
     public static Integer NEWS_LAST_OPERATION = 5;
 
+    private Constants() {
+    }
 }
